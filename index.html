@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!--[CDATA[<sc-helmet-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #05040B; color: #F5F7FF; -webkit-font-smoothing: antialiased; overscroll-behavior-y: none; }
+  a { color: #19E6FF; text-decoration: none; }
+  a:hover { color: #FF3CAC; }
+  i { font: 400 11.5px 'IBM Plex Sans Arabic', system-ui, sans-serif; font-style: normal; color: #8E93AE; direction: rtl; unicode-bidi: isolate; display: block; width: fit-content; margin-top: 2px; }
+  @keyframes mRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes mWipe { from { clip-path: inset(0 100% 0 0); opacity: .2; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+  @keyframes mCaret { 0%,50% { opacity: .9; } 51%,100% { opacity: 0; } }
+  @keyframes mCue { 0%,100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(7px); opacity: 1; } }
+  @keyframes vFade { to { opacity: 0; } }
+  @keyframes vGridRun { from { transform: rotateX(74deg) translateY(0); } to { transform: rotateX(74deg) translateY(120px); } }
+  @keyframes vGridFade { 0% { opacity: 0; } 55% { opacity: .32; } 100% { opacity: .16; } }
+  @keyframes vScanLines { from { transform: translateY(0); } to { transform: translateY(4px); } }
+  @keyframes vIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+  @keyframes vHaze { 0% { opacity: 0; transform: scale(.8); } 100% { opacity: .95; transform: scale(1); } }
+  @keyframes vTrace { 0% { transform: scaleX(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: scaleX(1); opacity: .8; } }
+  @keyframes vFlowOut { 0% { transform: translateX(0) scale(.5); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(var(--len)) scale(1); opacity: 0; } }
+  @keyframes vFlowIn { 0% { transform: translateX(var(--len)) scale(1); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(0) scale(.5); opacity: 0; } }
+  @keyframes vNode { 0% { opacity: 0; transform: scale(.2); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: .72; transform: scale(.9); } }
+  @keyframes vCore { 0% { opacity: 0; transform: scale(.2); } 45% { opacity: 1; transform: scale(1.05); } 100% { opacity: .9; transform: scale(.92); } }
+  @keyframes vCoreBurst { 0% { opacity: .9; transform: scale(.92); } 40% { opacity: 1; transform: scale(2.1); } 100% { opacity: 0; transform: scale(3.4); } }
+  @keyframes vSweep { 0% { transform: translateX(-140%) skewX(-14deg); opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateX(140%) skewX(-14deg); opacity: 0; } }
+  @keyframes vLogoIn { 0% { opacity: 0; transform: scale(.94); filter: blur(18px); clip-path: inset(0 0 100% 0); }
+                       50% { opacity: 1; clip-path: inset(0 0 0 0); }
+                       75% { filter: blur(2px); }
+                       100% { opacity: 1; transform: scale(1); filter: blur(0); clip-path: inset(0 0 0 0); } }
+  @keyframes vGhost { 0%, 100% { opacity: 0; transform: translateX(0); } 35% { opacity: .45; transform: translateX(-3px); } 65% { opacity: .35; transform: translateX(3px); } }
+  @keyframes vNetOut { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(.55); } }
+  @keyframes vOpen { 0% { opacity: 0; transform: scaleY(.02); } 45% { opacity: 1; } 100% { opacity: 0; transform: scaleY(1.7); } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05040B"></rect><text x="50" y="56" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="20" letter-spacing="2" fill="#19E6FF">VOID</text><text x="50" y="72" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" letter-spacing="3" fill="#A05BFF">MENU</text></svg></template>
+
+<div style="position:relative;min-height:100vh;background:#05040B;font:500 15px 'IBM Plex Sans',system-ui,sans-serif;overflow-x:hidden">
+
+<div data-bgs="" style="position:absolute;top:0;left:50%;margin-left:-215px;width:430px;height:100vh;z-index:0;overflow:hidden;pointer-events:none;will-change:transform">
+  <img data-bg-img="1" src="assets/bg-02b.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="2" src="assets/bg-03.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="3" src="assets/bg-04.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="4" src="assets/bg-05.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="5" src="assets/bg-06.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="6" src="assets/bg-07b.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="7" src="assets/bg-08.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:80% 62%;opacity:0;transition:opacity .75s ease;will-change:transform,opacity">
+  <img data-bg-img="0" src="assets/bg-01.jpg" alt="" style="position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:62% 50%;opacity:1;transition:opacity .75s ease;will-change:transform,opacity">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,4,11,.62) 0%,rgba(5,4,11,.2) 30%,rgba(5,4,11,.34) 58%,rgba(5,4,11,.86) 100%)"></div>
+</div>
+
+<div style="position:relative;z-index:1;max-width:430px;margin:0 auto">
+
+  <section data-hero="" data-bg="0" style="min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:12px;padding:34px 26px 10px;box-sizing:border-box">
+    <img src="assets/void-logo-knockout.png" alt="VOID" style="width:60%;max-width:200px;filter:drop-shadow(0 0 26px rgba(25,230,255,.4))">
+    <div style="font:600 11px Rajdhani,sans-serif;letter-spacing:.5em;text-transform:uppercase;color:#F5F7FF;opacity:.85">Gaming Lounge</div>
+    <div style="width:72px;height:1px;background:linear-gradient(90deg,transparent,#19E6FF,transparent)"></div>
+    <div style="font:700 44px Rajdhani,sans-serif;letter-spacing:.12em;line-height:.9;text-transform:uppercase">Menu</div>
+    <div style="font:600 13px Rajdhani,sans-serif;letter-spacing:.28em;color:#19E6FF;text-transform:uppercase">Game // Sip // Repeat</div>
+    <div style="font:500 10px 'IBM Plex Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9AA0C0;max-width:280px;line-height:1.7">Coffee · Cold Drinks · Kitchen · Desserts · Gaming</div>
+    <div style="display:flex;justify-content:center;gap:9px;margin-top:6px">
+      <a href="https://www.instagram.com/thevoidgaminglounge/" target="_blank" rel="noopener" style="padding:9px 14px;border:1px solid rgba(25,230,255,.4);background:rgba(25,230,255,.06);font:600 9.5px Rajdhani,sans-serif;letter-spacing:.2em;text-transform:uppercase">Instagram</a>
+      <a href="https://www.tiktok.com/@voidgamingalex" target="_blank" rel="noopener" style="padding:9px 14px;border:1px solid rgba(160,91,255,.42);background:rgba(160,91,255,.07);font:600 9.5px Rajdhani,sans-serif;letter-spacing:.2em;text-transform:uppercase">TikTok</a>
+      <a href="https://voidgaminglounge.com" target="_blank" rel="noopener" style="padding:9px 14px;border:1px solid rgba(255,60,172,.4);background:rgba(255,60,172,.06);font:600 9.5px Rajdhani,sans-serif;letter-spacing:.2em;text-transform:uppercase">Website</a>
+    </div>
+    <div style="margin-top:10px;display:flex;flex-direction:column;align-items:center;gap:6px;animation:mCue 2.2s ease-in-out infinite">
+      <div style="font:600 9.5px Rajdhani,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#5B5F7D">Scroll</div>
+      <div style="width:1px;height:26px;background:linear-gradient(180deg,#19E6FF,transparent)"></div>
+    </div>
+  </section>
+
+  <div data-gate="" style="min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:1px 26px;box-sizing:border-box;text-align:center">
+    <div style="width:1px;height:1px;background:linear-gradient(180deg,transparent,#A05BFF)"></div>
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.46em;text-transform:uppercase;color:#5B5F7D">The Menu</div>
+    <div style="font:400 12px 'IBM Plex Sans Arabic',sans-serif;color:#6E7292;direction:rtl">القائمة</div>
+    <div style="width:1px;height:1px;background:linear-gradient(180deg,#A05BFF,transparent)"></div>
+  </div>
+
+  <section data-break="" data-bg="1" data-screen-label="02 Coffee &amp; Espresso" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">CAFFEINE</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Coffee &amp; Espresso</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">القهوة والإسبريسو</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="1" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Caffeine Boost</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">قهوة ساخنة</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Espresso S<i>إسبريسو سنجل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">45</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Espresso D<i>إسبريسو دوبل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">56</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Ristretto<i>ريستريتو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">45</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Espresso Macchiato<i>إسبريسو ماكياتو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">45</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Americano<i>أمريكانو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">58</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Classic Cortado<i>كورتادو كلاسيك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">74</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Cappuccino<i>كابتشينو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">78</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Cappuccino L<i>كابتشينو كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">92</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Latte M<i>لاتيه وسط</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Latte L<i>لاتيه كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">83</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Flat White<i>فلات وايت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">100</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Spanish Latte<i>لاتيه إسباني</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">106</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mochaccino<i>موكاتشينو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">83</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">White Mocha<i>وايت موكا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">83</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Affogato<i>أفوجاتو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">63</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hazelnut Chocolate Coffee<i>قهوة بالبندق والشوكولاتة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">French Coffee<i>قهوة فرنساوي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">54</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Nescafe M<i>نسكافيه وسط</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">63</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Nescafe L<i>نسكافيه كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">79</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Turkish Coffee S<i>قهوة تركي سنجل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">39</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Turkish Coffee D<i>قهوة تركي دوبل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">46</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Specialty Coffee</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">قهوة مختصة</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">French Press<i>فرنش بريس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">196</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">V60<i>في ٦٠</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">201</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="2" data-screen-label="03 Warm &amp; Classic" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">WARMING</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Warm &amp; Classic</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">ساخن وكلاسيك</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="2" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Warming</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مشروبات ساخنة</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Classic Tea<i>شاي كلاسيك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">37</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Flavored Tea<i>شاي بالنكهات</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">45</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milk Tea<i>شاي بالحليب</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">48</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Green Tea<i>شاي أخضر</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">52</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Green Mint Tea<i>شاي أخضر بالنعناع</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">52</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Herbs<i>أعشاب</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">37</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mix Herbs<i>أعشاب مشكلة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">52</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hot Chocolate M<i>هوت شوكولاتة وسط</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">67</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hot Chocolate L<i>هوت شوكولاتة كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">79</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hot Cider<i>هوت سايدر</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">62</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Bar Extras</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">إضافات البار</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Espresso Shot<i>شوت إسبريسو إضافي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">23</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Milk<i>حليب إضافي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">17</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Flavor<i>نكهة إضافية</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">31</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Topping<i>توبينج إضافي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">35</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Lotus<i>لوتس إضافي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">40</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Extra Nutella<i>نوتيلا إضافية</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">40</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Soft Drinks</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مشروبات غازية</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pepsi<i>بيبسي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pepsi Diet<i>بيبسي دايت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">7UP<i>سفن أب</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mountain Dew<i>ماونتن ديو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">V7 Cola<i>في ٧ كولا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">V7 Pomegranate<i>في ٧ رمان</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Double Dare<i>دوبل دير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Double Dare Lemon Mint<i>دوبل دير ليمون نعناع</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mineral Water (S)<i>مياه معدنية صغير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">17</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mineral Water (L)<i>مياه معدنية كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">23</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="3" data-screen-label="04 Cold &amp; Blended" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">COLD BAR</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Cold &amp; Blended</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">بارد ومخفوق</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="3" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Iced Blends</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مثلجات القهوة</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Iced Americano<i>أمريكانو مثلج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">79</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Iced Latte<i>لاتيه مثلج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">85</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Iced Cappuccino<i>كابتشينو مثلج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">99</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mocha Rush<i>موكا رش</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">102</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Caramel Mirage<i>كراميل ميراج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">121</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Spanish Frost<i>سبانيش فروست</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">124</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Frappocalypse</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">فرابيه</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Coffee Frappe<i>فرابيه قهوة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">98</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Caramel Frappe<i>فرابيه كراميل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">109</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mocha Madness<i>موكا مادنس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">109</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Nutella Fission<i>نوتيلا فيشن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">127</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Lotus Frappe<i>فرابيه لوتس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Fresh</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">عصائر فريش</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Lemon<i>ليمون</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">48</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Lemon Mint<i>ليمون بالنعناع</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">55</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Smooth Lemon Mint<i>ليمون نعناع سموذ</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">62</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Orange Juice<i>عصير برتقال</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Electric Lemon<i>ليمون إلكتريك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">78</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Shake It Up</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">ميلك شيك</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Vanilla<i>ميلك شيك فانيلا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Chocolate<i>ميلك شيك شوكولاتة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Strawberry<i>ميلك شيك فراولة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Mango<i>ميلك شيك مانجو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Blueberry<i>ميلك شيك بلوبيري</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">98</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Caramel<i>ميلك شيك كراميل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">98</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Green Apple<i>ميلك شيك تفاح أخضر</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">98</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Passion Fruits<i>ميلك شيك باشون فروت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">98</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Oreo<i>ميلك شيك أوريو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">112</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Nutella<i>ميلك شيك نوتيلا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">112</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Lotus<i>ميلك شيك لوتس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">112</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Nescafe<i>ميلك شيك نسكافيه</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">112</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Milkshake Pistachios<i>ميلك شيك بيستاشيو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">131</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="4" data-screen-label="05 Power &amp; Refresh" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">POWER</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Power &amp; Refresh</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">طاقة وانعاش</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="4" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Power Punch</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مشروبات الطاقة الخاصة</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Berry DeLight<i>بيري ديلايت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Blood &amp; Sand<i>بلاد آند ساند</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Health Potion (Red Dragon)<i>هيلث بوشن (ريد دراجون)</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Thunder (Mana Potion)<i>ثاندر (مانا بوشن)</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Summer Sippers</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مشروبات صيفية</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Cherry Cola<i>شيري كولا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Blue Lagoon<i>بلو لاجون</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">81</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Classic Mojito<i>موهيتو كلاسيك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">92</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Sunrise<i>صن رايز</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">92</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Energy · Red Bull</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">ريد بُل</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull Original<i>أوريجينال</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull Sugar Free<i>بدون سكر</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull Blue Edition<i>بلو إديشن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull Purple Edition<i>بربل إديشن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull White Edition<i>وايت إديشن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull White Peach<i>وايت بيتش</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Bull Vanilla<i>فانيلا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">86</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Energy · Monster</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">مونستر</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Classic<i>كلاسيك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">92</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Ultra<i>ألترا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Ultra Rosa<i>ألترا روزا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Ultra Watermelon<i>ألترا بطيخ</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Absolutely Zero<i>أبسولوتلي زيرو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Aussie Lemonade<i>أوزي ليمونيد</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Pacific Punch<i>باسيفيك بانش</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Mariposa<i>ماريبوزا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Monster Lando Norris<i>لاندو نوريس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">345</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Energy · Twist</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">تويست</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Twist<i>تويست</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Twist Strawberry<i>فراولة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Twist Fusion Purple<i>فيوجن بربل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Twist Tropical Mango Peach<i>مانجو وخوخ استوائي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">41</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="5" data-screen-label="06 Kitchen &amp; Mains" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">KITCHEN</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Kitchen &amp; Mains</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">المطبخ والأطباق</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="5" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Burger</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">برجر</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Ignite (Single)<i>إجنايت سنجل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">184</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Ignite (Double)<i>إجنايت دوبل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">242</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Splinter (Single)<i>سبلينتر سنجل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">184</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Splinter (Double)<i>سبلينتر دوبل</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">242</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Sandwiches</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">ساندويتشات</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Crispy Supreme<i>كريسبي سوبريم</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">190</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Pizza</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">بيتزا</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pizza Margherita<i>مارجاريتا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">150</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Veggie Pizza<i>خضار</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">167</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hotdog Pizza<i>هوت دوج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">184</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Minced Beef<i>لحمة مفرومة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">190</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pizza Chicken BBQ<i>دجاج باربكيو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">219</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pizza Salami<i>سلامي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">219</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pizza Chicken Ranch<i>دجاج رانش</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">242</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pizza Supreme<i>سوبريم</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">253</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Pasta</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">باستا</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Veggie Pasta<i>باستا خضار</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">92</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Veggie Pasta — Baked<i>باستا خضار بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">121</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hotdog Pasta<i>باستا هوت دوج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">138</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Hotdog Pasta — Baked<i>باستا هوت دوج بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">167</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Chicken Pasta<i>باستا دجاج</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">150</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Chicken Pasta — Baked<i>باستا دجاج بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">178</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Minced Beef Pasta<i>باستا لحمة مفرومة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">150</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Minced Beef Pasta — Baked<i>باستا لحمة مفرومة بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">178</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Crispy Chicken Pasta<i>باستا دجاج كريسبي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">155</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Crispy Chicken Pasta — Baked<i>باستا دجاج كريسبي بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">184</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Crispy Supreme Pasta<i>باستا كريسبي سوبريم</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">190</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Crispy Supreme Pasta — Baked<i>باستا كريسبي سوبريم بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">219</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mac &amp; Cheese Pasta<i>ماك آند تشيز</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">201</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Mac &amp; Cheese Pasta — Baked<i>ماك آند تشيز بالفرن</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">230</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="6" data-screen-label="07 Sides &amp; Sweets" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">SIDES</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Sides &amp; Sweets</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">مقبلات وحلويات</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="6" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Desserts &amp; Snacks</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">حلويات وسناكس</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">White Chocolate Cookie<i>كوكيز شوكولاتة بيضاء</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">63</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Chocolate Chips Cookie<i>كوكيز شوكولاتة شيبس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Oats &amp; Cinnamon Cookie<i>كوكيز شوفان وقرفة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">69</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Nutella Cookie<i>كوكيز نوتيلا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">75</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red Velvet Cookie<i>كوكيز ريد فيلفيت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">75</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Double Chocolate Cookie<i>كوكيز دوبل شوكولاتة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">75</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>More Desserts &amp; Snacks</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">المزيد من الحلويات</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Triple Chocolate Cookie<i>كوكيز تريبل شوكولاتة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">81</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Brookie<i>بروكي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">84</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Kinder Cookie<i>كوكيز كيندر</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">115</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Dots Jar - Cinnamon<i>برطمان دوتس قرفة</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">115</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Dots Jar - Dark Chocolate<i>برطمان دوتس شوكولاتة دارك</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">115</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Dots Jar - White Chocolate<i>برطمان دوتس شوكولاتة بيضاء</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">115</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Side Items</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">أطباق جانبية</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Fries<i>بطاطس</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">45</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Fries (L)<i>بطاطس كبير</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">62</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Pasta<i>باستا</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">75</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Chicken Strips 3Pcs + Sauce<i>ستربس دجاج ٣ قطع مع صوص</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">123</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Supreme Cheese Fries<i>بطاطس بالجبنة سوبريم</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">167</b>
+      </div>
+    </div>
+  </section>
+
+  <section data-break="" data-bg="7" data-screen-label="08 Play &amp; Rates" style="min-height:30vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:30px 26px;box-sizing:border-box">
+    <div style="font:600 10px Rajdhani,sans-serif;letter-spacing:.42em;color:#19E6FF;text-transform:uppercase">PLAY</div>
+    <h2 data-wipe="" style="font:700 33px Rajdhani,sans-serif;letter-spacing:.03em;text-transform:uppercase;margin:0;line-height:.98;max-width:300px">Play &amp; Rates</h2>
+    <div style="font:400 14px 'IBM Plex Sans Arabic',sans-serif;color:#A05BFF;direction:rtl">اللعب والأسعار</div>
+    <div style="width:56px;height:1px;background:linear-gradient(90deg,transparent,#A05BFF,transparent);margin-top:6px"></div>
+  </section>
+
+  <section data-list="" data-bg="7" style="padding:8px 22px 46px;box-sizing:border-box;background:linear-gradient(180deg,rgba(5,4,11,.72) 0,rgba(5,4,11,.93) 40px,rgba(5,4,11,.94) calc(100% - 40px),rgba(5,4,11,.7) 100%)">
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Computer Stations</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">أجهزة الكمبيوتر</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Prime PC</div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">25</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Elite PC<i>إيليت</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">35</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">VIP PC<i>في آي بي</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">40</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Red &amp; Blue PC<i>ريد آند بلو</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">50</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">Emerald PC<i>إميرالد</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">70</b>
+      </div>
+    </div>
+    <div style="margin-bottom:26px">
+      <h3 style="font:600 15px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#A05BFF;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid rgba(160,91,255,.3);display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <span>Controller Add-ons</span><i style="display:inline-block;margin:0;font-size:11px;color:#9AA0C0">أذرع التحكم</i>
+      </h3>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">PS4 Controller<i>ذراع بلايستيشن ٤</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">15</b>
+      </div>
+      <div data-row="" style="display:grid;grid-template-columns:1fr auto;column-gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(245,247,255,.06);opacity:0;transition:opacity .28s ease">
+        <div data-name="" style="line-height:1.3">PS5 Controller<i>ذراع بلايستيشن ٥</i></div>
+        <b data-price="" style="font:600 17px Rajdhani,sans-serif;color:#19E6FF;font-variant-numeric:tabular-nums;white-space:nowrap">25</b>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:linear-gradient(180deg,rgba(5,4,11,.6) 0%,rgba(5,4,11,.93) 14%,rgba(5,4,11,.96) 100%);padding:44px 26px 120px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;border-top:1px solid rgba(245,247,255,.1)">
+    <img src="assets/void-logo-knockout.png" alt="VOID" style="width:120px;opacity:.9">
+    <div style="font:600 16px Rajdhani,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#F5F7FF">Play more. Stay longer.</div>
+    <div style="font:400 13px 'IBM Plex Sans Arabic',sans-serif;color:#8E93AE;direction:rtl">اسأل فريقنا عن قواعد الجلسات والعروض</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px">
+      <a href="https://www.instagram.com/thevoidgaminglounge/" target="_blank" rel="noopener" style="padding:11px 18px;border:1px solid rgba(25,230,255,.4);font:600 10.5px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;background:rgba(25,230,255,.06)">Instagram</a>
+      <a href="https://www.tiktok.com/@voidgamingalex" target="_blank" rel="noopener" style="padding:11px 18px;border:1px solid rgba(160,91,255,.42);font:600 10.5px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;background:rgba(160,91,255,.07)">TikTok</a>
+      <a href="https://www.facebook.com/TheVoidAlex" target="_blank" rel="noopener" style="padding:11px 18px;border:1px solid rgba(160,91,255,.42);font:600 10.5px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;background:rgba(160,91,255,.07)">Facebook</a>
+      <a href="https://voidgaminglounge.com" target="_blank" rel="noopener" style="padding:11px 18px;border:1px solid rgba(255,60,172,.4);font:600 10.5px Rajdhani,sans-serif;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,60,172,.06)">voidgaminglounge.com</a>
+    </div>
+    <div style="font:500 9px 'IBM Plex Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9AA0C0;line-height:1.9;margin-top:8px">Prices in Egyptian pounds<br>Please inform our team of any food allergies</div>
+  </footer>
+
+</div>
+
+<div data-fan="" style="position:absolute;top:0;left:50%;margin-left:139px;z-index:40;width:56px;height:56px;will-change:transform">
+  <div aria-hidden="true" style="position:absolute;left:-36px;top:-36px;width:128px;height:128px;border-radius:50%;background:radial-gradient(circle,rgba(5,4,11,.94) 28%,rgba(5,4,11,.62) 56%,transparent 74%);pointer-events:none"></div>
+  <button data-fan-item="1" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">02</button>
+  <button data-fan-item="2" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">03</button>
+  <button data-fan-item="3" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">04</button>
+  <button data-fan-item="4" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">05</button>
+  <button data-fan-item="5" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">06</button>
+  <button data-fan-item="6" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">07</button>
+  <button data-fan-item="7" type="button" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.45);background:rgba(5,4,11,.92);color:#F5F7FF;font:700 15px Rajdhani,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;pointer-events:none;transition:transform .42s cubic-bezier(.16,.9,.28,1),opacity .3s ease;backdrop-filter:blur(6px)">08</button>
+  <button data-fan-toggle="" type="button" aria-label="Jump to a category" style="position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;border:1px solid rgba(25,230,255,.6);background:radial-gradient(circle at 50% 40%,rgba(25,230,255,.22),rgba(5,4,11,.95) 70%);color:#F5F7FF;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 26px rgba(25,230,255,.32);transition:transform .4s cubic-bezier(.16,.9,.28,1)">
+    <span data-fan-icon="" style="display:block;width:18px;height:18px;border-radius:50%;border:1.5px solid #19E6FF;box-shadow:inset 0 0 8px rgba(160,91,255,.9),0 0 10px rgba(25,230,255,.7);transition:transform .4s ease"></span>
+  </button>
+  <div data-fan-label="" style="position:absolute;right:66px;top:18px;white-space:nowrap;font:600 9.5px Rajdhani,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#5B5F7D;pointer-events:none;transition:opacity .3s ease">Jump</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844},&quot;showArabic&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Menu options&quot;},&quot;neonPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Menu options&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.wire();
+    this.playIntro(() => {});
+  }
+
+  // Types a row's name and price out character by character. The text is
+  // cached on first pass so re-entering the observer can't double-type.
+  typeRow(row, delay) {
+    const name = row.querySelector('[data-name]');
+    const price = row.querySelector('[data-price]');
+    const ar = row.querySelector('[data-name] i');
+    if (!name || name.dataset.typed) return;
+    name.dataset.typed = '1';
+
+    const full = name.dataset.text || name.dataset.text === '' ? name.dataset.text : (name.dataset.text = name.firstChild ? name.firstChild.textContent : '');
+    const pFull = price ? (price.dataset.text = price.textContent) : '';
+    if (name.firstChild) name.firstChild.textContent = '';
+    if (price) { price.textContent = ''; price.style.opacity = '1'; }
+    if (ar) { ar.style.opacity = '0'; ar.style.transition = 'opacity .45s ease'; }
+
+    const caret = document.createElement('span');
+    caret.textContent = '_';
+    caret.style.cssText = 'color:#19E6FF;opacity:.9;animation:mCaret .5s steps(1) infinite';
+    if (price) price.appendChild(caret);
+
+    const step = 26;
+    setTimeout(() => {
+      let i = 0;
+      const typeName = () => {
+        if (!name.firstChild) return typePrice();
+        name.firstChild.textContent = full.slice(0, ++i);
+        if (i < full.length) return setTimeout(typeName, step);
+        typePrice();
+      };
+      let j = 0;
+      const typePrice = () => {
+        if (!price) return done();
+        price.textContent = pFull.slice(0, ++j);
+        price.appendChild(caret);
+        if (j < pFull.length) return setTimeout(typePrice, 55);
+        done();
+      };
+      const done = () => {
+        setTimeout(() => { caret.remove(); if (ar) ar.style.opacity = '1'; }, 160);
+      };
+      typeName();
+    }, delay * 1000);
+  }
+
+  wire() {
+    const bgs = [...document.querySelectorAll('[data-bg-img]')];
+    const marks = [...document.querySelectorAll('[data-bg]')];
+    const breaks = [...document.querySelectorAll('[data-break]')];
+
+    // background cross-fade as sections pass
+    let active = 0;
+    const setBg = (n) => {
+      if (n === active) return;
+      active = n;
+      bgs.forEach((b) => { b.style.opacity = (+b.dataset.bgImg === n) ? '1' : '0'; });
+    };
+    const bgIO = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) setBg(+e.target.dataset.bg); });
+    }, { threshold: 0.01, rootMargin: '-45% 0px -45% 0px' });
+    marks.forEach((m) => bgIO.observe(m));
+
+    // Pin the photo layer and the jump button by hand: position:fixed is
+    // unreliable inside a transformed host preview, so both are absolute and
+    // re-placed from the root's viewport offset every frame.
+    const label = document.querySelector('[data-fan-label]');
+    let open = false;
+    const root = document.querySelector('[data-bgs]').parentElement;
+    const bgWrap = document.querySelector('[data-bgs]');
+    const fanWrap = document.querySelector('[data-fan]');
+    let raf = null;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        const top = -root.getBoundingClientRect().top;
+        const vh = window.innerHeight;
+        if (label) label.style.opacity = (top > 40 || open) ? '0' : '1';
+        bgWrap.style.transform = 'translateY(' + top.toFixed(1) + 'px)';
+        bgWrap.style.height = vh + 'px';
+        fanWrap.style.transform = 'translateY(' + (top + vh - 80).toFixed(1) + 'px)';
+        const y = top * 0.06;
+        bgs.forEach((b) => { b.style.transform = 'translateY(' + (-y % 90).toFixed(1) + 'px) scale(1.03)'; });
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    // rows rise, titles wipe, prices flicker
+    const revealIO = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        revealIO.unobserve(el);
+        if (el.hasAttribute('data-wipe')) {
+          el.style.animation = 'mWipe .8s cubic-bezier(.2,.85,.25,1) both';
+          return;
+        }
+        const sibs = [...el.parentElement.querySelectorAll('[data-row]')];
+        const d = Math.min(sibs.indexOf(el), 8) * 0.07;
+        el.style.opacity = '1';
+        this.typeRow(el, d);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-row],[data-wipe]').forEach((el) => revealIO.observe(el));
+
+    // A hard flick can outrun the observer, leaving rows above the fold at
+    // opacity 0. Sweep anything already scrolled past and reveal it outright.
+    let sweepTimer = null;
+    const sweep = () => {
+      document.querySelectorAll('[data-row]').forEach((el) => {
+        if (el.dataset.swept || el.querySelector('[data-name]')?.dataset.typed) return;
+        if (el.getBoundingClientRect().bottom < 0) {
+          el.dataset.swept = '1';
+          el.style.opacity = '1';
+          revealIO.unobserve(el);
+          const n = el.querySelector('[data-name]');
+          if (n) n.dataset.typed = '1';
+        }
+      });
+    };
+    const onSweep = () => { clearTimeout(sweepTimer); sweepTimer = setTimeout(sweep, 140); };
+    window.addEventListener('scroll', onSweep, { passive: true });
+
+    // fan-out category jump
+    const fan = document.querySelector('[data-fan]');
+    const items = [...document.querySelectorAll('[data-fan-item]')];
+    const toggle = document.querySelector('[data-fan-toggle]');
+    const icon = document.querySelector('[data-fan-icon]');
+    const setOpen = (v) => {
+      open = v;
+      if (label) label.style.opacity = v ? '0' : '1';
+      if (icon) icon.style.transform = v ? 'scale(.45)' : 'none';
+      if (toggle) toggle.style.transform = v ? 'rotate(135deg)' : 'none';
+      items.forEach((b, i) => {
+        // Sweep up-and-left only (-104deg to -176deg) so every button stays
+        // above the pinned orb and inside the viewport at any height.
+        const a = (-104 - i * (72 / Math.max(items.length - 1, 1))) * Math.PI / 180;
+        const r = 132;
+        b.style.opacity = v ? '1' : '0';
+        b.style.pointerEvents = v ? 'auto' : 'none';
+        b.style.transitionDelay = (v ? i * 0.035 : (items.length - i) * 0.02) + 's';
+        b.style.transform = v
+          ? 'translate(' + (Math.cos(a) * r).toFixed(1) + 'px,' + (Math.sin(a) * r).toFixed(1) + 'px)'
+          : 'translate(0,0) scale(.4)';
+      });
+    };
+    setOpen(false);
+    if (toggle) toggle.addEventListener('click', () => setOpen(!open));
+    items.forEach((b) => {
+      b.addEventListener('click', () => {
+        const target = breaks[+b.dataset.fanItem - 1];
+        setOpen(false);
+        if (target) window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top, behavior: 'smooth' });
+      });
+    });
+    document.addEventListener('click', (ev) => { if (open && fan && !fan.contains(ev.target)) setOpen(false); });
+    this._cleanup = () => {
+      bgIO.disconnect(); revealIO.disconnect();
+      clearTimeout(sweepTimer);
+      window.removeEventListener('scroll', onSweep);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }
+
+  // Four-act opening: the network wakes, the logo resolves through it, the
+  // core bursts, then a light wipe hands over to the menu.
+  playIntro(onReveal) {
+    document.getElementById('void-intro')?.remove();
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const T = { net: 0.15, logo: 1.15, burst: 2.35, wipe: 3050, end: 3850 };
+
+    const veil = document.createElement('div');
+    veil.id = 'void-intro';
+    veil.setAttribute('role', 'presentation');
+    veil.setAttribute('aria-label', 'VOID intro');
+    veil.style.cssText = 'position:fixed;inset:0;z-index:2147483000;background:radial-gradient(120% 90% at 50% 46%,#0A0A20 0%,#05050C 62%);overflow:hidden;display:grid;place-items:center';
+
+    const stage = document.createElement('div');
+    stage.style.cssText = 'position:relative;width:min(88vmin,470px);aspect-ratio:1;display:grid;place-items:center;perspective:560px;transform-style:preserve-3d';
+    veil.appendChild(stage);
+
+    const layer = (css, anim, z) => {
+      const el = document.createElement('div');
+      el.style.cssText = 'position:absolute;left:50%;top:50%;translate:-50% -50%;pointer-events:none;' + css + (anim ? ';animation:' + anim : '');
+      if (z !== undefined) el.style.zIndex = String(z);
+      stage.appendChild(el);
+      return el;
+    };
+
+    let net = null;
+    if (!reduced) {
+      // ACT I — the environment wakes: horizon grid, scan lines, haze
+      const grid = layer('width:300%;height:210%;top:78%;background-image:linear-gradient(rgba(0,229,255,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(155,77,255,.24) 1px,transparent 1px);background-size:62px 62px;transform-origin:50% 0;mask:linear-gradient(180deg,#000,transparent 60%);-webkit-mask:linear-gradient(180deg,#000,transparent 60%)', 'vGridRun 1.6s linear infinite, vGridFade 2.4s ease-out both', -5);
+      grid.style.transform = 'rotateX(74deg)';
+      layer('width:150%;height:150%;background:repeating-linear-gradient(180deg,rgba(245,245,250,.045) 0 1px,transparent 1px 4px)', 'vScanLines .6s steps(4) infinite, vIn 1.6s ease-out both', -4);
+      layer('width:132%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(155,77,255,.32) 0%,rgba(155,77,255,.1) 40%,transparent 66%);filter:blur(30px)', 'vHaze 1.9s cubic-bezier(.2,.8,.25,1) both', -4);
+      layer('width:98%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.24) 0%,transparent 60%);filter:blur(24px)', 'vHaze 2.1s cubic-bezier(.2,.8,.25,1) .25s both', -4);
+
+      // ACT II — the circuit network draws out from the core
+      net = document.createElement('div');
+      net.style.cssText = 'position:absolute;left:50%;top:50%;translate:-50% -50%;width:0;height:0;z-index:-3;opacity:.55;pointer-events:none';
+      stage.appendChild(net);
+
+      [10, 36, 64, 98, 126, 154, 188, 216, 244, 278, 306, 334].forEach((deg, i) => {
+        const len = 118 + (i % 4) * 36;
+        const trace = document.createElement('div');
+        trace.style.cssText = 'position:absolute;left:0;top:0;height:1px;width:' + len + 'px;transform-origin:0 50%';
+        trace.style.transform = 'rotate(' + deg + 'deg)';
+        net.appendChild(trace);
+
+        const lit = document.createElement('div');
+        lit.style.cssText = 'position:absolute;inset:0;transform-origin:0 50%;background:linear-gradient(90deg,rgba(0,229,255,.3),rgba(0,229,255,.05));animation:vTrace .95s cubic-bezier(.2,.85,.25,1) ' + (T.net + i * 0.055) + 's both';
+        trace.appendChild(lit);
+
+        const pulse = document.createElement('div');
+        pulse.style.cssText = 'position:absolute;left:0;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:rgba(245,245,250,.6);box-shadow:0 0 7px 2px rgba(0,229,255,.4)';
+        pulse.style.setProperty('--len', (len - 6) + 'px');
+        pulse.style.animation = (i % 3 === 0 ? 'vFlowIn ' : 'vFlowOut ') + (1.15 + (i % 3) * 0.25) + 's linear ' + (T.net + 0.7 + i * 0.09) + 's infinite';
+        trace.appendChild(pulse);
+
+        const node = document.createElement('div');
+        node.style.cssText = 'position:absolute;top:50%;left:' + (len - 4) + 'px;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:rgba(0,229,255,.4);box-shadow:0 0 8px 1px rgba(0,229,255,.22);animation:vNode .85s ease-out ' + (T.net + 0.75 + i * 0.055) + 's both';
+        trace.appendChild(node);
+      });
+
+      const core = layer('width:32px;height:32px;border-radius:50%;background:radial-gradient(circle,rgba(245,245,250,.7) 0%,rgba(0,229,255,.5) 40%,rgba(0,229,255,.12) 66%,transparent 74%);box-shadow:0 0 22px 6px rgba(0,229,255,.22)', 'vCore 1.1s cubic-bezier(.2,.85,.25,1) .1s both', -2);
+      core.style.animation += ', vCoreBurst .7s cubic-bezier(.3,.7,.3,1) ' + T.burst + 's both';
+
+      // light sweep passing behind the logo
+      layer('width:160%;height:24%;background:linear-gradient(90deg,transparent,rgba(0,229,255,.45) 42%,rgba(245,245,250,.8) 50%,rgba(155,77,255,.45) 58%,transparent);filter:blur(10px)', 'vSweep 1.5s cubic-bezier(.4,.1,.4,.9) ' + (T.logo - 0.2) + 's both', -2);
+    }
+
+    // ACT III — the official logo resolves
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:relative;z-index:1;width:clamp(190px,55vw,380px);display:grid;place-items:center';
+    const logo = document.createElement('img');
+    logo.alt = 'VOID';
+    logo.decoding = 'sync';
+    logo.style.cssText = 'display:block;width:100%;height:auto;object-fit:contain';
+    const srcEl = document.querySelector('img[alt="VOID"]');
+    logo.src = (srcEl && (srcEl.currentSrc || srcEl.src)) || 'assets/void-logo-knockout.png';
+    wrap.appendChild(logo);
+    stage.appendChild(wrap);
+
+    if (reduced) {
+      logo.style.animation = 'vIn .2s ease-out both';
+    } else {
+      logo.style.animation = 'vLogoIn 1.35s cubic-bezier(.2,.82,.24,1) ' + T.logo + 's both';
+      [['#00E5FF', -3], ['#9B4DFF', 3]].forEach(([c, dx], i) => {
+        const g = document.createElement('img');
+        g.src = logo.src;
+        g.alt = '';
+        g.setAttribute('aria-hidden', 'true');
+        g.style.cssText = 'position:absolute;inset:0;width:100%;height:auto;object-fit:contain;pointer-events:none;z-index:-1;filter:blur(2px);mix-blend-mode:screen;opacity:0;animation:vGhost .4s steps(3) ' + (T.burst + i * 0.05) + 's both';
+        wrap.appendChild(g);
+      });
+      // the network collapses into the logo as the core bursts
+      if (net) net.style.animation = 'vNetOut .8s cubic-bezier(.4,0,.8,.4) ' + (T.burst + 0.15) + 's both';
+    }
+
+    const skipBtn = document.createElement('button');
+    skipBtn.type = 'button';
+    skipBtn.textContent = 'Skip';
+    skipBtn.style.cssText = 'position:absolute;right:18px;bottom:20px;padding:9px 16px;border:1px solid rgba(245,245,250,.22);border-radius:999px;background:rgba(8,8,23,.6);color:rgba(245,245,250,.72);font:600 10px Rajdhani,sans-serif;letter-spacing:.24em;text-transform:uppercase;cursor:pointer';
+    skipBtn.addEventListener('focus', () => { skipBtn.style.borderColor = '#00E5FF'; skipBtn.style.color = '#F5F5FA'; });
+    skipBtn.addEventListener('blur', () => { skipBtn.style.borderColor = 'rgba(245,245,250,.22)'; skipBtn.style.color = 'rgba(245,245,250,.72)'; });
+    veil.appendChild(skipBtn);
+
+    document.body.appendChild(veil);
+
+    const scroller = document.scrollingElement || document.documentElement;
+    const prevOverflow = scroller.style.overflow;
+    scroller.style.overflow = 'hidden';
+
+    let finished = false;
+    const finish = (fast) => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(this._introTimer);
+      scroller.style.overflow = prevOverflow;
+      // ACT IV — light wipe hands over to the menu
+      if (!fast && !reduced) {
+        const open = layer('width:160%;height:74%;background:linear-gradient(180deg,transparent,rgba(0,229,255,.2) 40%,rgba(245,245,250,.48) 50%,rgba(155,77,255,.2) 60%,transparent)', 'vOpen .8s cubic-bezier(.3,.7,.3,1) both', 3);
+        open.style.zIndex = '3';
+      }
+      const out = fast ? 180 : (reduced ? 200 : 800);
+      veil.style.animation = 'vFade ' + out + 'ms ease-out both';
+      if (typeof onReveal === 'function') onReveal();
+      setTimeout(() => veil.remove(), out + 60);
+    };
+
+    skipBtn.addEventListener('click', () => finish(true));
+    veil.addEventListener('click', (ev) => { if (ev.target !== skipBtn) finish(true); });
+    const onKey = (ev) => {
+      if (ev.key === 'Escape' || ev.key === ' ' || ev.key === 'Enter') {
+        window.removeEventListener('keydown', onKey);
+        finish(true);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    logo.addEventListener('error', () => finish(true));
+
+    this._introTimer = setTimeout(() => finish(false), reduced ? 220 : T.wipe);
+  }
+
+  componentWillUnmount() {
+    if (this._cleanup) this._cleanup();
+    clearTimeout(this._introTimer);
+    document.getElementById('void-intro')?.remove();
+  }
+}
+</script>
+</body>
+</html>
